@@ -2,6 +2,8 @@
 
 The goal of this package is to keep our devcontainers secure **without** getting in the way of day–to–day development. The shared allowlist lives here so every project pulls the same defaults, and adding a new domain stays a two‑minute job.
 
+> Temporary note: testing repo wiring—delete once flow is verified.
+
 ## Repository Layout
 
 ```
