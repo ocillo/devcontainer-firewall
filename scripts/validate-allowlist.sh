@@ -3,6 +3,7 @@ set -euo pipefail
 
 script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 repo_root="$(cd "${script_dir}/.." && pwd)"
+repo_doc_hint="Docs: README.md (Everyday tasks) • docs/usage.md"
 
 file="${repo_root}/allowlists/global.txt"
 do_fix=false
@@ -23,6 +24,8 @@ Usage: ./scripts/validate-allowlist.sh [--file path] [--fix] [--resolve]
 Checks formatting, duplicates, and required entries for an allowlist file.
 --fix      rewrite the file with sorted, deduplicated entries.
 --resolve  attempt DNS resolution for hostnames (warn-only).
+
+Docs: README.md (Everyday tasks) and docs/usage.md.
 USAGE
 }
 
@@ -128,4 +131,4 @@ if "$do_resolve"; then
   fi
 fi
 
-echo "Allowlist validation passed ($file)"
+echo "Allowlist validation passed ($file). ${repo_doc_hint}"

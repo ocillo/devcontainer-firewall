@@ -6,12 +6,17 @@ repo_root="$(cd "${script_dir}/.." && pwd)"
 allowlist_file="${repo_root}/allowlists/global.txt"
 validate_script="${script_dir}/validate-allowlist.sh"
 
+readonly repo_doc_hint="See README.md (Project overrides & workflow)."
+
 usage() {
   cat <<'USAGE'
 Usage: ./scripts/allowlist-add.sh <domain-or-cidr>
 
 Adds the entry to allowlists/global.txt (if it is not already present),
 then re-runs the validation script to sort/dedupe the list.
+
+Need a refresher? All helper scripts accept --help and the full workflow
+is documented in README.md and docs/usage.md.
 USAGE
 }
 
@@ -46,7 +51,7 @@ if [[ ! -f "$allowlist_file" ]]; then
 fi
 
 if grep -Fxq "$entry" "$allowlist_file"; then
-  echo "Entry '$entry' already present in global allowlist. Nothing to do."
+  echo "Entry '$entry' already present in global allowlist. Nothing to do. ${repo_doc_hint}"
   exit 0
 fi
 
@@ -56,4 +61,4 @@ echo "Added '$entry' to allowlists/global.txt"
 echo "Reformatting + validating…"
 "$validate_script" --file "$allowlist_file" --fix
 
-echo "Done."
+echo "Done. ${repo_doc_hint}"

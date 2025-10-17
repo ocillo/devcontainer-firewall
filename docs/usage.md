@@ -1,6 +1,6 @@
 # Devcontainer Integration Guide
 
-This note captures how projects consume the shared allowlist while keeping Anthropic’s firewall guarantees intact.
+This note captures how projects consume the shared allowlist while keeping Anthropic’s firewall guarantees intact. Every helper script in this repo accepts `--help` and links back here when you need a reminder.
 
 ## 1. Wire up Environment Variables
 
@@ -20,22 +20,15 @@ Add the following to your `devcontainer.json` (or equivalent):
 - `FIREWALL_ALLOWLIST_REF` can pin a git tag/commit for reproducibility.
 - If a project doesn’t need local overrides you can omit `FIREWALL_ALLOWLIST_LOCAL`; the script will ignore missing files.
 
-## 2. Extend `init-firewall.sh`
+## 2. Copy the baseline scripts
 
-Starting from Anthropic’s upstream script:
+Grab the latest `setup-firewall.sh` and `init-firewall.sh` from `scripts/templates/` (until the templates land, copy them from the most recent consuming repo) and place them inside your project’s `.devcontainer/` folder.
 
-1. **Download shared list**  
-   Try `curl --fail --retry 3 --retry-delay 1 "$FIREWALL_ALLOWLIST_URL"` into a temp file, moving it into `"$FIREWALL_ALLOWLIST_CACHE_DIR/global.txt"` on success.
-2. **Determine source**  
-   - remote succeeded → use cached file.  
-   - remote failed but cache exists → use cache and print a yellow warning.  
-   - remote failed and no cache → fall back to baked-in baseline (keep Anthropic domains + GitHub ranges) and print a red warning.
-3. **Merge**  
-   Concatenate baseline + cached + local override, strip comments/blank lines, `sort -u`, and hydrate the `allowed-domains` ipset from that merged list.
-4. **Log**  
-   Emit a single summary line (`Firewall allowlist source: remote@main (8 hosts, 0 CIDRs)`).
+- `setup-firewall.sh` installs prerequisites (iptables, ipset, etc.) and copies `init-firewall.sh` into `/usr/local/bin/`.
+- `init-firewall.sh` reads the environment variables you set in step 1, downloads the shared allowlist (with retry + cache), merges it with any local overrides, and applies the iptables/ipset rules.
+- The script logs which source it used (`remote@main`, `cache@main`, or `baseline`) and points back to this documentation so developers know where to look.
 
-Keep the rest of the script unchanged so Anthropic’s iptables logic and verification checks remain intact.
+If you need to customise the script for a specific project, add a comment explaining why and consider upstreaming the change here so other projects benefit.
 
 ## 3. Optional Refresh Helper
 
