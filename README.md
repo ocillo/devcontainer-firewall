@@ -18,6 +18,7 @@ Every consuming project copies the published shell scripts from here, sets a han
 | Responsibility | Lives in this repo? | Notes |
 | --- | --- | --- |
 | Shared baseline allowlist | ✅ `allowlists/global.txt` | Reviewed list of domains/CIDRs used across projects. PRs here keep everyone aligned. |
+| Allowlist registry | ✅ [`docs/allowlist-registry.md`](docs/allowlist-registry.md) | Single source for pending/approved/removed domains plus verification evidence. |
 | Helper scripts (`allowlist-add`, `validate`, `firewall-refresh`) | ✅ `scripts/` | Shared tooling; each script supports `--help` and links back to these docs. |
 | Devcontainer wiring guide | ✅ `docs/usage.md` | Step-by-step instructions for environment variables, overrides, and verification. |
 | Baseline devcontainer scripts (`setup-firewall.sh`, `init-firewall.sh`) | ✅ `scripts/templates/` *(coming soon)* | Templates that client repos vendor into `.devcontainer/`. |
@@ -25,7 +26,10 @@ Every consuming project copies the published shell scripts from here, sets a han
 
 **Day-to-day flow**
 
-1. **Central maintenance (this repo):** update `allowlists/global.txt`, run the helpers, document changes in `CHANGELOG.md`. Improvements to the setup/init scripts land here first.
+1. **Central maintenance (this repo):**
+   - Review `docs/allowlist-registry.md` — add new candidates to the Pending table, promote approved entries, and archive removals.
+   - Run `./scripts/allowlist-add.sh <domain>` (auto-sorts + validates) followed by `./scripts/validate-allowlist.sh` or `./scripts/firewall-refresh.sh --no-download`.
+   - Record the change in `CHANGELOG.md`. Improvements to the setup/init scripts land here first.
 2. **Project setup (client repo):** copy the latest `setup-firewall.sh`/`init-firewall.sh` templates into `.devcontainer/`, add the standard env vars, and optionally create `.devcontainer/firewall-allowlist.local.txt` for project-only domains.
 3. **Developers:** run `./scripts/firewall-refresh.sh` (or rebuild the container) to apply new allowlist entries. Runtime logs point back to this README so nobody has to guess.
 
@@ -73,6 +77,8 @@ Anything sensitive or client-specific goes in the consuming repo’s `.devcontai
 ## Devcontainer integration (client repo workflow)
 
 Most projects follow the steps documented in [`docs/usage.md`](docs/usage.md):
+
+> **IP-based matching:** the firewall only permits the exact IPs resolved for each hostname. Wildcards are not supported—add subdomains separately when they map to different IPs (e.g. `auth.openai.com`). After editing allowlists, run `./scripts/firewall-refresh.sh` to load the new IPs in your container.
 
 1. Set the standard environment variables in `.devcontainer/devcontainer.json` (`FIREWALL_ALLOWLIST_URL`, `FIREWALL_ALLOWLIST_REF`, cache dir, local override path).
 2. Copy the baseline `setup-firewall.sh` and `init-firewall.sh` templates into `.devcontainer/` and commit them. The setup script installs dependencies; the init script downloads the shared allowlist, merges local overrides, and applies iptables rules on every container start.
