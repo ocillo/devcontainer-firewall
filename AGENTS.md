@@ -72,8 +72,7 @@ The goal: think before building, document why you made decisions.
 2. Validate plan  
    Peer review, challenge assumptions, adjust.
 
-3. Design verification  
-   Decide how you will prove the change works—e.g. run `./scripts/validate-allowlist.sh`, `./scripts/firewall-refresh.sh --no-download`, or `shellcheck`.
+3. Design verification 
 
 4. Implement  
    Update scripts, docs, and allowlists with maintainability in mind.
@@ -118,7 +117,7 @@ Never implement based on assumptions.
 
 When writing or modifying shell scripts or docs:
 
-- Keep scripts portable (`#!/usr/bin/env bash`, `set -euo pipefail`) and readable.
+- Keep scripts portable and readable.
 - Prefer simple, well-understood patterns; document non-obvious decisions with concise comments.
 - Verify scripts with `shellcheck` and the repository helpers (`validate-allowlist.sh`, `firewall-refresh.sh`) before moving on.
 - Think through edge cases (network failures, missing env vars, repeated entries) and handle them safely.

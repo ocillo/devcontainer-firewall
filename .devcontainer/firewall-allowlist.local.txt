@@ -1,0 +1,2 @@
+# Add project-specific firewall exceptions here (one per line).
+# Entries should be promoted to the shared allowlist repo when they become permanent.

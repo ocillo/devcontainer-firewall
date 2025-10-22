@@ -3,7 +3,10 @@ set -euo pipefail
 
 script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 repo_root="$(cd "${script_dir}/.." && pwd)"
-repo_doc_hint="Docs: README.md (Everyday tasks) • docs/usage.md"
+
+readonly DOC_README_URL="https://github.com/ocillo/devcontainer-firewall#readme"
+readonly DOC_USAGE_URL="https://github.com/ocillo/devcontainer-firewall/blob/main/docs/usage.md"
+readonly repo_doc_hint="Docs: ${DOC_README_URL} • ${DOC_USAGE_URL}"
 
 file="${repo_root}/allowlists/global.txt"
 do_fix=false
@@ -18,14 +21,14 @@ required_entries=(
 )
 
 usage() {
-  cat <<'USAGE'
+  cat <<USAGE
 Usage: ./scripts/validate-allowlist.sh [--file path] [--fix] [--resolve]
 
 Checks formatting, duplicates, and required entries for an allowlist file.
 --fix      rewrite the file with sorted, deduplicated entries.
 --resolve  attempt DNS resolution for hostnames (warn-only).
 
-Docs: README.md (Everyday tasks) and docs/usage.md.
+Docs: ${DOC_README_URL} • ${DOC_USAGE_URL}
 USAGE
 }
 

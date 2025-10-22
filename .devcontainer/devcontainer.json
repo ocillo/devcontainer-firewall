@@ -1,0 +1,43 @@
+{
+  // Development container for maintaining ocillo/devcontainer-firewall
+  // Base: Debian 12 (Bookworm) with Node.js 22.x LTS
+  // Includes: GitHub CLI, Anthropic Claude CLI, OpenAI Codex CLI
+  "name": "Devcontainer Firewall Development",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
+  "runArgs": [
+    "--cap-add=NET_ADMIN",
+    "--cap-add=NET_RAW"
+  ],
+  "containerEnv": {
+    "FIREWALL_ALLOWLIST_REF": "main",
+    "FIREWALL_ALLOWLIST_URL": "https://raw.githubusercontent.com/ocillo/devcontainer-firewall/main/allowlists/global.txt",
+    "FIREWALL_ALLOWLIST_LOCAL": "${containerWorkspaceFolder}/.devcontainer/firewall-allowlist.local.txt",
+    "CLAUDE_CONFIG_DIR": "/home/node/.claude",
+    "CODEX_HOME": "/home/node/.codex"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "anthropic.claude-code",
+        "openai.chatgpt"
+      ],
+      "settings": {
+        "editor.formatOnSave": true
+      }
+    }
+  },
+  "mounts": [
+    "source=devcontainer-firewall-claude-${devcontainerId},target=/home/node/.claude,type=volume",
+    "source=devcontainer-firewall-codex-${devcontainerId},target=/home/node/.codex,type=volume"
+  ],
+  "postCreateCommand": "sudo /usr/bin/env bash .devcontainer/setup-firewall.sh",
+  "postStartCommand": "sudo --preserve-env=FIREWALL_ALLOWLIST_URL,FIREWALL_ALLOWLIST_REF,FIREWALL_ALLOWLIST_LOCAL /usr/local/bin/init-firewall.sh",
+  "remoteUser": "node"
+}
