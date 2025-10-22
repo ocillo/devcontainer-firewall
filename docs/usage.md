@@ -10,7 +10,7 @@ Add the following to your `devcontainer.json` (or equivalent):
 {
   "containerEnv": {
     "FIREWALL_ALLOWLIST_REF": "main",
-    "FIREWALL_ALLOWLIST_URL": "https://raw.githubusercontent.com/ocillo/devcontainer-firewall/${FIREWALL_ALLOWLIST_REF}/allowlists/global.txt",
+    "FIREWALL_ALLOWLIST_URL": "https://raw.githubusercontent.com/ocillo/devcontainer-firewall/main/allowlists/global.txt",
     "FIREWALL_ALLOWLIST_LOCAL": "${containerWorkspaceFolder}/.devcontainer/firewall-allowlist.local.txt"
   }
 }
@@ -19,10 +19,14 @@ Add the following to your `devcontainer.json` (or equivalent):
 - `FIREWALL_ALLOWLIST_REF` can pin a git tag/commit for reproducibility.
 - If a project doesn’t need local overrides you can omit `FIREWALL_ALLOWLIST_LOCAL`; the script ignores missing files.
 - The old `FIREWALL_ALLOWLIST_CACHE_DIR` setting is gone—every run downloads the shared allowlist directly and warns if it has to fall back to the bundled baseline.
+- Dev Containers do **not** expand `${ENV_VAR}` placeholders inside `containerEnv`. If you want to pin to a specific tag or commit, update both `FIREWALL_ALLOWLIST_REF` and the hard-coded path in `FIREWALL_ALLOWLIST_URL` (e.g. replace `main` with the tag name).
 
 ## 2. Copy the baseline scripts
 
-Grab the latest `setup-firewall.sh` and `init-firewall.sh` from `scripts/templates/` and place them inside your project’s `.devcontainer/` folder.
+- Grab the latest `setup-firewall.sh` and `init-firewall.sh` from the shared repo:
+  - https://raw.githubusercontent.com/ocillo/devcontainer-firewall/main/scripts/templates/setup-firewall.sh
+  - https://raw.githubusercontent.com/ocillo/devcontainer-firewall/main/scripts/templates/init-firewall.sh
+- Copy both into your project’s `.devcontainer/` folder and commit them.
 
 - `setup-firewall.sh` installs prerequisites (iptables, ipset, etc.) and copies `init-firewall.sh` into `/usr/local/bin/`.
 - `init-firewall.sh` reads the environment variables you set in step 1, downloads the shared allowlist (with retry), merges it with any local overrides, and applies the iptables/ipset rules. When the download fails it falls back to the bundled baseline and logs a loud warning so nobody misses the degraded state.
@@ -32,7 +36,7 @@ If you need to customise the script for a specific project, add a comment explai
 
 ## 3. Optional Refresh Helper
 
-Ship `./scripts/firewall-refresh.sh` in consuming repos:
+Ship `./scripts/firewall-refresh.sh` in consuming repos (template here: https://raw.githubusercontent.com/ocillo/devcontainer-firewall/main/scripts/templates/firewall-refresh.sh):
 
 ```bash
 #!/usr/bin/env bash

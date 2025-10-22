@@ -6,6 +6,11 @@ We cut date-based releases: move entries from `Unreleased` into a `## [vYYYY.MM.
 section and tag the commit `vYYYY.MM.DD`. Leave `Unreleased` empty between releases.
 
 ## [Unreleased]
+### Added
+- Provide a `scripts/templates/firewall-refresh.sh` copy so downstream repos can vendor the helper directly.
+
+### Changed
+- Update `docs/usage.md` to link to raw template URLs and clarify that `FIREWALL_ALLOWLIST_URL` must be fully expanded (Dev Containers do not substitute `${FIREWALL_ALLOWLIST_REF}` automatically).
 
 ## [v2025.10.22] – 2025-10-22
 ### Added
