@@ -6,6 +6,16 @@ We cut date-based releases: move entries from `Unreleased` into a `## [vYYYY.MM.
 section and tag the commit `vYYYY.MM.DD`. Leave `Unreleased` empty between releases.
 
 ## [Unreleased]
+### Added
+- Provide `scripts/templates/` copies of `setup-firewall.sh` and `init-firewall.sh` plus a project `.devcontainer/` for validating shared firewall changes locally.
+- Add `auth.openai.com` to the shared `allowlists/global.txt` and record it in `docs/allowlist-registry.md` (required for OpenAI authentication flows).
+
+### Changed
+- Update README and usage guide to point consumers at the new templates.
+- Point helper script hints to the canonical GitHub documentation.
+
+### Removed
+- Drop the legacy `.devcontainer.example/` snapshot in favour of the shared templates.
 
 ## [v2025.10.17] – 2025-10-17
 ### Added

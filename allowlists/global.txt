@@ -15,6 +15,7 @@ api.vercel.com
 app.vercel.com
 apt.llvm.org
 archlinux.org
+auth.openai.com
 avatars.githubusercontent.com
 azure.com
 bitbucket.org

@@ -50,6 +50,7 @@ baseline behaviour.
 | avatars.githubusercontent.com | GitHub | User avatar CDN (docs, changelog visuals) | `https://dns.google/resolve?name=avatars.githubusercontent.com&type=A` | 2025-10-17 |  |
 | blog.cloudflare.com | Cloudflare | Engineering/security announcements | `https://dns.google/resolve?name=blog.cloudflare.com&type=A` | 2025-10-17 |  |
 | chat.openai.com | OpenAI | ChatGPT UI for quick validation | `https://dns.google/resolve?name=chat.openai.com&type=A` | 2025-10-17 |  |
+| auth.openai.com | OpenAI | Authentication for ChatGPT/Platform login flows | `https://dns.google/resolve?name=auth.openai.com&type=A` | 2025-10-21 | CNAME to Cloudflare CDN |
 | cli.github.com | GitHub | GitHub CLI releases | `https://dns.google/resolve?name=cli.github.com&type=A` | 2025-10-17 | CNAME to cli.github.io |
 | codeload.github.com | GitHub | Archive downloads (zip/tar) | `https://dns.google/resolve?name=codeload.github.com&type=A` | 2025-10-17 |  |
 | community.cloudflare.com | Cloudflare | Community troubleshooting forum | `https://dns.google/resolve?name=community.cloudflare.com&type=A` | 2025-10-17 |  |
