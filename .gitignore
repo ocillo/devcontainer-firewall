@@ -34,3 +34,6 @@ ehthumbs_vista.db
 
 # General editor backups
 *~
+
+/docs/standards/
+.devcontainer.example

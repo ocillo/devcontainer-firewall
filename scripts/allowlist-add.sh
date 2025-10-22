@@ -6,24 +6,31 @@ repo_root="$(cd "${script_dir}/.." && pwd)"
 allowlist_file="${repo_root}/allowlists/global.txt"
 validate_script="${script_dir}/validate-allowlist.sh"
 
-readonly repo_doc_hint="See README.md (Project overrides & workflow)."
+readonly DOC_README_URL="https://github.com/ocillo/devcontainer-firewall#readme"
+readonly DOC_USAGE_URL="https://github.com/ocillo/devcontainer-firewall/blob/main/docs/usage.md"
+readonly repo_doc_hint="See ${DOC_README_URL} (project workflow) and ${DOC_USAGE_URL} (devcontainer integration)."
 
 usage() {
-  cat <<'USAGE'
+  cat <<USAGE
 Usage: ./scripts/allowlist-add.sh <domain-or-cidr>
 
 Adds the entry to allowlists/global.txt (if it is not already present),
 then re-runs the validation script to sort/dedupe the list.
 
 Need a refresher? All helper scripts accept --help and the full workflow
-is documented in README.md and docs/usage.md.
+is documented in:
+  - ${DOC_README_URL}
+  - ${DOC_USAGE_URL}
 USAGE
 }
 
 entry=""
 
 while [[ $# -gt 0 ]]; do
-  case "$1" in
+  arg="$1"
+  shift
+
+  case "$arg" in
     -h|--help)
       usage
       exit 0
@@ -33,10 +40,9 @@ while [[ $# -gt 0 ]]; do
         echo "Multiple entries provided. Only one domain/CIDR at a time." >&2
         exit 1
       fi
-      entry="$(printf '%s' "$1" | tr 'A-Z' 'a-z')" # normalise to lowercase
+      entry="$(printf '%s' "$arg" | tr '[:upper:]' '[:lower:]')" # normalise to lowercase
       ;;
   esac
-  shift
 done
 
 if [[ -z "$entry" ]]; then

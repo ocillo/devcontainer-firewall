@@ -23,6 +23,7 @@ blog.cloudflare.com
 bower.io
 centos.org
 chat.openai.com
+chatgpt.com
 claude.ai
 cli.github.com
 cloudflare.com

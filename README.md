@@ -21,14 +21,14 @@ Every consuming project copies the published shell scripts from here, sets a han
 | Allowlist registry | ✅ [`docs/allowlist-registry.md`](docs/allowlist-registry.md) | Single source for pending/approved/removed domains plus verification evidence. |
 | Helper scripts (`allowlist-add`, `validate`, `firewall-refresh`) | ✅ `scripts/` | Shared tooling; each script supports `--help` and links back to these docs. |
 | Devcontainer wiring guide | ✅ `docs/usage.md` | Step-by-step instructions for environment variables, overrides, and verification. |
-| Baseline devcontainer scripts (`setup-firewall.sh`, `init-firewall.sh`) | ✅ `scripts/templates/` *(coming soon)* | Templates that client repos vendor into `.devcontainer/`. |
+| Baseline devcontainer scripts (`setup-firewall.sh`, `init-firewall.sh`) | ✅ `scripts/templates/` | Templates that client repos vendor into `.devcontainer/` (keep these as the upstream truth). |
 | Project-specific overrides | ❌ (lives in client repo) | Each project owns `.devcontainer/firewall-allowlist.local.txt` for client-only domains. |
 
 **Day-to-day flow**
 
 1. **Central maintenance (this repo):**
    - Review `docs/allowlist-registry.md` — add new candidates to the Pending table, promote approved entries, and archive removals.
-   - Run `./scripts/allowlist-add.sh <domain>` (auto-sorts + validates) followed by `./scripts/validate-allowlist.sh` or `./scripts/firewall-refresh.sh --no-download`.
+   - Run `./scripts/allowlist-add.sh <domain>` (auto-sorts + validates) followed by `./scripts/validate-allowlist.sh` or `./scripts/firewall-refresh.sh` to reapply the updated rules locally.
    - Record the change in `CHANGELOG.md`. Improvements to the setup/init scripts land here first.
 2. **Project setup (client repo):** copy the latest `setup-firewall.sh`/`init-firewall.sh` templates into `.devcontainer/`, add the standard env vars, and optionally create `.devcontainer/firewall-allowlist.local.txt` for project-only domains.
 3. **Developers:** run `./scripts/firewall-refresh.sh` (or rebuild the container) to apply new allowlist entries. Runtime logs point back to this README so nobody has to guess.
@@ -80,9 +80,9 @@ Most projects follow the steps documented in [`docs/usage.md`](docs/usage.md):
 
 > **IP-based matching:** the firewall only permits the exact IPs resolved for each hostname. Wildcards are not supported—add subdomains separately when they map to different IPs (e.g. `auth.openai.com`). After editing allowlists, run `./scripts/firewall-refresh.sh` to load the new IPs in your container.
 
-1. Set the standard environment variables in `.devcontainer/devcontainer.json` (`FIREWALL_ALLOWLIST_URL`, `FIREWALL_ALLOWLIST_REF`, cache dir, local override path).
-2. Copy the baseline `setup-firewall.sh` and `init-firewall.sh` templates into `.devcontainer/` and commit them. The setup script installs dependencies; the init script downloads the shared allowlist, merges local overrides, and applies iptables rules on every container start.
-3. Add the optional refresh helper so developers can pull allowlist updates without rebuilding the container.
+1. Set the standard environment variables in `.devcontainer/devcontainer.json` (`FIREWALL_ALLOWLIST_URL`, `FIREWALL_ALLOWLIST_REF`, optional local override path).
+2. Copy the baseline `setup-firewall.sh` and `init-firewall.sh` templates into `.devcontainer/` and commit them. The setup script installs dependencies; the init script downloads the shared allowlist on every run, merges local overrides, and applies iptables rules. When the download fails it logs a loud warning and falls back to the bundled baseline (IPv4 destinations only).
+3. Add the optional refresh helper so developers can pull allowlist updates without rebuilding the container. It simply re-runs the init script, so any download failure propagates immediately.
 4. Keep `.devcontainer/firewall-allowlist.local.txt` for project-only domains, with comments explaining why each domain is needed.
 
 `docs/usage.md` also includes a verification checklist (allowed domain succeeds, blocked domain fails, offline fallback works) so new projects can confirm everything is wired correctly.
@@ -99,5 +99,6 @@ Most projects follow the steps documented in [`docs/usage.md`](docs/usage.md):
 - [Anthropic devcontainer baseline](https://anthropic.mintlify.app/en/docs/claude-code/devcontainer)
 - [Anthropic firewall/network configuration](https://anthropic.mintlify.app/en/docs/claude-code/network-config)
 - [Anthropic IP ranges](https://anthropic.mintlify.app/en/api/ip-addresses)
+- [Anthropic Claude Code Github repo .devcontainer](https://github.com/anthropics/claude-code/tree/main/.devcontainer)
 
 These documents shape the baseline entries and guardrails we keep in the downstream `init-firewall.sh`.
