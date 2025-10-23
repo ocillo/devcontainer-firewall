@@ -48,6 +48,7 @@ baseline behaviour.
 | api.vercel.com | Vercel | API used by deployment tooling | `https://dns.google/resolve?name=api.vercel.com&type=A` | 2025-10-17 |  |
 | app.vercel.com | Vercel | Vercel deployment dashboard | `https://dns.google/resolve?name=app.vercel.com&type=A` | 2025-10-17 |  |
 | avatars.githubusercontent.com | GitHub | User avatar CDN (docs, changelog visuals) | `https://dns.google/resolve?name=avatars.githubusercontent.com&type=A` | 2025-10-17 |  |
+| astral.sh | Python tooling | uv package manager homepage and installer endpoint | `https://dns.google/resolve?name=astral.sh&type=A` | 2025-10-23 | Required for uv installation and updates; Cloudflare CDN |
 | blog.cloudflare.com | Cloudflare | Engineering/security announcements | `https://dns.google/resolve?name=blog.cloudflare.com&type=A` | 2025-10-17 |  |
 | chat.openai.com | OpenAI | ChatGPT UI for quick validation | `https://dns.google/resolve?name=chat.openai.com&type=A` | 2025-10-17 |  |
 | chatgpt.com | OpenAI | ChatGPT landing domain used in redirect/login flows | `https://dns.google/resolve?name=chatgpt.com&type=A` | 2025-10-22 | Redirects to ChatGPT product; blocking it breaks Codex login and responses |
@@ -68,12 +69,14 @@ baseline behaviour.
 | docs.anthropic.com | Anthropic | Claude/Anthropic documentation | `https://dns.google/resolve?name=docs.anthropic.com&type=A` | 2025-10-17 |  |
 | docs.aws.amazon.com | AWS | AWS documentation CDN | `https://dns.google/resolve?name=docs.aws.amazon.com&type=A` | 2025-10-17 |  |
 | docs.claude.com | Anthropic | Additional Claude developer docs | `https://dns.google/resolve?name=docs.claude.com&type=A` | 2025-10-17 |  |
+| docs.astral.sh | Python tooling | uv documentation portal | `https://dns.google/resolve?name=docs.astral.sh&type=A` | 2025-10-23 | Shares IPs with astral.sh; explicit entry for stability |
 | docs.docker.com | Container tooling | Docker product documentation and CLI reference | `https://dns.google/resolve?name=docs.docker.com&type=A` | 2025-10-17 |  |
 | docs.github.com | GitHub | GitHub documentation | `https://dns.google/resolve?name=docs.github.com&type=A` | 2025-10-17 |  |
 | docs.hetzner.com | Hetzner | Hetzner documentation hub | `https://dns.google/resolve?name=docs.hetzner.com&type=A` | 2025-10-17 |  |
 | docs.runcloud.io | RunCloud | RunCloud documentation | `https://dns.google/resolve?name=docs.runcloud.io&type=A` | 2025-10-17 |  |
 | duckduckgo.com | Search | Web search endpoint used by MCP tooling | `https://dns.google/resolve?name=duckduckgo.com&type=A` | 2025-10-17 |  |
 | eslint.org | Tooling docs | Official ESLint documentation for rule reference and CLI usage | `https://dns.google/resolve?name=eslint.org&type=A` | 2025-10-17 |  |
+| files.pythonhosted.org | Python package registry | PyPI CDN for package downloads | `https://dns.google/resolve?name=files.pythonhosted.org&type=A` | 2025-10-23 | Fastly CDN; shares IPs with pythonhosted.org but explicit entry for safety |
 | git.io | GitHub | Short URLs referenced in docs | `https://dns.google/resolve?name=git.io&type=A` | 2025-10-17 |  |
 | github.githubassets.com | GitHub | Static asset CDN (docs UI) | `https://dns.google/resolve?name=github.githubassets.com&type=A` | 2025-10-17 |  |
 | graphql.org | GraphQL | Official GraphQL specification and reference | `https://dns.google/resolve?name=graphql.org&type=A` | 2025-10-17 |  |

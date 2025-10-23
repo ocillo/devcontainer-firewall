@@ -1,4 +1,4 @@
-#### Building Logical Plans: The Mindset
+# Building Logical Plans: The Mindset
 
   1. Start with "What do I need to KNOW before I can DO?"
     - Don't plan actions on things you don't understand yet

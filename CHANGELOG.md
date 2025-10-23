@@ -6,8 +6,12 @@ We cut date-based releases: move entries from `Unreleased` into a `## [vYYYY.MM.
 section and tag the commit `vYYYY.MM.DD`. Leave `Unreleased` empty between releases.
 
 ## [Unreleased]
+
+## [v2025.10.23] – 2025-10-23
 ### Added
 - Provide a `scripts/templates/firewall-refresh.sh` copy so downstream repos can vendor the helper directly.
+- Add `uv` (Python package manager) to this repo's devcontainer for Python-based MCP servers and tooling.
+- Add `astral.sh`, `docs.astral.sh`, and `files.pythonhosted.org` to shared allowlist for uv installation and Python package downloads.
 
 ### Changed
 - Update `docs/usage.md` to link to raw template URLs and clarify that `FIREWALL_ALLOWLIST_URL` must be fully expanded (Dev Containers do not substitute `${FIREWALL_ALLOWLIST_REF}` automatically).

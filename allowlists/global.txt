@@ -15,6 +15,7 @@ api.vercel.com
 app.vercel.com
 apt.llvm.org
 archlinux.org
+astral.sh
 auth.openai.com
 avatars.githubusercontent.com
 azure.com
@@ -47,6 +48,7 @@ dns.google
 docker.com
 docker.io
 docs.anthropic.com
+docs.astral.sh
 docs.aws.amazon.com
 docs.claude.com
 docs.docker.com
@@ -59,6 +61,7 @@ duckduckgo.com
 eclipse.org
 eslint.org
 fedoraproject.org
+files.pythonhosted.org
 gcr.io
 ghcr.io
 git.io

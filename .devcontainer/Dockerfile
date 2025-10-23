@@ -13,6 +13,9 @@ ENV PATH=${PATH}:/home/${USERNAME}/.npm-global/bin
 RUN mkdir -p /home/${USERNAME}/.claude /home/${USERNAME}/.codex \
     && chown -R ${USERNAME}:${USERNAME} /home/${USERNAME}/.claude /home/${USERNAME}/.codex
 
+# Install uv for Python package management and tooling (e.g., scripts, dependencies, MCP servers).
+COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
+
 USER ${USERNAME}
 
 # Install Claude Code and Codex CLIs globally via npm.
