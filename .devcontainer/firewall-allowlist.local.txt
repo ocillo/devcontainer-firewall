@@ -1,2 +1,3 @@
 # Add project-specific firewall exceptions here (one per line).
 # Entries should be promoted to the shared allowlist repo when they become permanent.
+# More details: https://raw.githubusercontent.com/ocillo/devcontainer-firewall/refs/heads/main/README.md
