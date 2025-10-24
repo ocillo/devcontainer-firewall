@@ -6,6 +6,9 @@ We cut date-based releases: move entries from `Unreleased` into a `## [vYYYY.MM.
 section and tag the commit `vYYYY.MM.DD`. Leave `Unreleased` empty between releases.
 
 ## [Unreleased]
+### Added
+- Add `opennext.js.org` to shared allowlist for OpenNext.js deployment documentation.
+- Add `payloadcms.com` to shared allowlist for Payload CMS documentation and configuration reference.
 
 ## [v2025.10.23] – 2025-10-23
 ### Added

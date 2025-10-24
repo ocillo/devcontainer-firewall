@@ -104,11 +104,13 @@ nuget.org
 objects.githubusercontent.com
 one.dash.cloudflare.com
 openai.com
+opennext.js.org
 oracle.com
 packagecloud.io
 packages.microsoft.com
 packagist.org
 pages.cloudflare.com
+payloadcms.com
 pipelines.actions.githubusercontent.com
 pkg.github.com
 pkg.go.dev

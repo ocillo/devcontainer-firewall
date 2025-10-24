@@ -92,7 +92,9 @@ baseline behaviour.
 | objects.githubusercontent.com | GitHub | Release assets CDN | `https://dns.google/resolve?name=objects.githubusercontent.com&type=A` | 2025-10-17 |  |
 | one.dash.cloudflare.com | Cloudflare | Zero Trust dashboard | `https://dns.google/resolve?name=one.dash.cloudflare.com&type=A` | 2025-10-17 |  |
 | openai.com | OpenAI | Root site (redirects, marketing) | `https://dns.google/resolve?name=openai.com&type=A` | 2025-10-17 |  |
+| opennext.js.org | Tooling docs | OpenNext.js documentation for Next.js deployment patterns | `https://dns.google/resolve?name=opennext.js.org&type=A` | 2025-10-24 | Cloudflare CDN (3 IPs: 172.67.73.64, 104.26.8.84, 104.26.9.84) |
 | pages.cloudflare.com | Cloudflare | Pages dashboard/docs | `https://dns.google/resolve?name=pages.cloudflare.com&type=A` | 2025-10-17 |  |
+| payloadcms.com | CMS docs | Payload CMS documentation and configuration reference | `https://dns.google/resolve?name=payloadcms.com&type=A` | 2025-10-24 | Single IP (76.76.21.21) |
 | pipelines.actions.githubusercontent.com | GitHub | Actions OIDC endpoint | `https://dns.google/resolve?name=pipelines.actions.githubusercontent.com&type=A` | 2025-10-17 |  |
 | pkg.github.com | GitHub | Packages registry | `https://dns.google/resolve?name=pkg.github.com&type=A` | 2025-10-17 |  |
 | platform.openai.com | OpenAI | Console (keys, billing) | `https://dns.google/resolve?name=platform.openai.com&type=A` | 2025-10-17 |  |
