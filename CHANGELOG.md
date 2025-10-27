@@ -9,6 +9,7 @@ section and tag the commit `vYYYY.MM.DD`. Leave `Unreleased` empty between relea
 ### Added
 - Add `opennext.js.org` to shared allowlist for OpenNext.js deployment documentation.
 - Add `payloadcms.com` to shared allowlist for Payload CMS documentation and configuration reference.
+- Add Cloudflare-managed MCP endpoints (`docs`, `bindings`, `builds`, `observability`, `radar`, `containers`, `browser`, `logs`, `ai-gateway`, `autorag`, `auditlogs`, `dns-analytics`, `dex`, `casb`, `graphql`) plus `mcp-cloudflare.ocillo.com` to the shared allowlist and registry so devcontainers can use Cloudflare's MCP catalog and our agency portal.
 
 ## [v2025.10.23] – 2025-10-23
 ### Added

@@ -42,14 +42,21 @@ baseline behaviour.
 | Hostname | Category | Reason | Source | Last Verified | Notes |
 | --- | --- | --- | --- | --- | --- |
 | accounts.hetzner.com | Hosting provider | Hetzner account portal for billing/access management | `https://dns.google/resolve?name=accounts.hetzner.com&type=A` | 2025-10-17 | Shares IP with Robot legacy console |
+| ai-gateway.mcp.cloudflare.com | Cloudflare MCP | Managed AI Gateway MCP server for prompt analytics and log searches | `https://developers.cloudflare.com/agents/model-context-protocol/mcp-servers-for-cloudflare/` | 2025-10-27 |  |
 | api.cloudflare.com | Cloudflare | REST API for firewall/Workers automation | `https://dns.google/resolve?name=api.cloudflare.com&type=A` | 2025-10-17 |  |
 | api.github.com | GitHub | REST/GraphQL API for automation | `https://dns.google/resolve?name=api.github.com&type=A` | 2025-10-17 |  |
 | api.openai.com | OpenAI | REST API for models/embeddings | `https://dns.google/resolve?name=api.openai.com&type=A` | 2025-10-17 |  |
 | api.vercel.com | Vercel | API used by deployment tooling | `https://dns.google/resolve?name=api.vercel.com&type=A` | 2025-10-17 |  |
 | app.vercel.com | Vercel | Vercel deployment dashboard | `https://dns.google/resolve?name=app.vercel.com&type=A` | 2025-10-17 |  |
-| avatars.githubusercontent.com | GitHub | User avatar CDN (docs, changelog visuals) | `https://dns.google/resolve?name=avatars.githubusercontent.com&type=A` | 2025-10-17 |  |
 | astral.sh | Python tooling | uv package manager homepage and installer endpoint | `https://dns.google/resolve?name=astral.sh&type=A` | 2025-10-23 | Required for uv installation and updates; Cloudflare CDN |
+| auditlogs.mcp.cloudflare.com | Cloudflare MCP | Audit Logs MCP server for querying account change history | `https://developers.cloudflare.com/agents/model-context-protocol/mcp-servers-for-cloudflare/` | 2025-10-27 |  |
+| autorag.mcp.cloudflare.com | Cloudflare MCP | AI Search MCP server for listing and searching indexed documents | `https://developers.cloudflare.com/agents/model-context-protocol/mcp-servers-for-cloudflare/` | 2025-10-27 |  |
+| avatars.githubusercontent.com | GitHub | User avatar CDN (docs, changelog visuals) | `https://dns.google/resolve?name=avatars.githubusercontent.com&type=A` | 2025-10-17 |  |
+| bindings.mcp.cloudflare.com | Cloudflare MCP | Workers Bindings MCP server for storage, AI, and compute integrations | `https://developers.cloudflare.com/agents/model-context-protocol/mcp-servers-for-cloudflare/` | 2025-10-27 |  |
 | blog.cloudflare.com | Cloudflare | Engineering/security announcements | `https://dns.google/resolve?name=blog.cloudflare.com&type=A` | 2025-10-17 |  |
+| browser.mcp.cloudflare.com | Cloudflare MCP | Browser Rendering MCP server for fetching pages and screenshots | `https://developers.cloudflare.com/agents/model-context-protocol/mcp-servers-for-cloudflare/` | 2025-10-27 |  |
+| builds.mcp.cloudflare.com | Cloudflare MCP | Workers Builds MCP server for deployment insights and management | `https://developers.cloudflare.com/agents/model-context-protocol/mcp-servers-for-cloudflare/` | 2025-10-27 |  |
+| casb.mcp.cloudflare.com | Cloudflare MCP | Cloudflare One CASB MCP server for SaaS misconfiguration checks | `https://developers.cloudflare.com/agents/model-context-protocol/mcp-servers-for-cloudflare/` | 2025-10-27 |  |
 | chat.openai.com | OpenAI | ChatGPT UI for quick validation | `https://dns.google/resolve?name=chat.openai.com&type=A` | 2025-10-17 |  |
 | chatgpt.com | OpenAI | ChatGPT landing domain used in redirect/login flows | `https://dns.google/resolve?name=chatgpt.com&type=A` | 2025-10-22 | Redirects to ChatGPT product; blocking it breaks Codex login and responses |
 | auth.openai.com | OpenAI | Authentication for ChatGPT/Platform login flows | `https://dns.google/resolve?name=auth.openai.com&type=A` | 2025-10-21 | CNAME to Cloudflare CDN |
@@ -61,10 +68,13 @@ baseline behaviour.
 | console.aws.amazon.com | AWS | Management console (infra visibility) | `https://dns.google/resolve?name=console.aws.amazon.com&type=A` | 2025-10-17 | Global Accelerator IPs |
 | console.hetzner.cloud | Hetzner | Cloud console access | `https://dns.google/resolve?name=console.hetzner.cloud&type=A` | 2025-10-17 |  |
 | containers.dev | Devcontainers | Dev Container specification and feature catalog | `https://dns.google/resolve?name=containers.dev&type=A` | 2025-10-17 |  |
+| containers.mcp.cloudflare.com | Cloudflare MCP | Containers MCP server for launching sandbox development environments | `https://developers.cloudflare.com/agents/model-context-protocol/mcp-servers-for-cloudflare/` | 2025-10-27 |  |
 | context7.com | Documentation | Context7 dashboard and API for library searches | `https://dns.google/resolve?name=context7.com&type=A` | 2025-10-17 |  |
 | dash.cloudflare.com | Cloudflare | Main Cloudflare dashboard | `https://dns.google/resolve?name=dash.cloudflare.com&type=A` | 2025-10-17 |  |
 | developers.cloudflare.com | Cloudflare | Product documentation | `https://dns.google/resolve?name=developers.cloudflare.com&type=A` | 2025-10-17 |  |
 | developers.openai.com | OpenAI | Platform/API documentation | `https://dns.google/resolve?name=developers.openai.com&type=A` | 2025-10-17 | CNAME to Vercel |
+| dex.mcp.cloudflare.com | Cloudflare MCP | Digital Experience Monitoring MCP server for app performance insights | `https://developers.cloudflare.com/agents/model-context-protocol/mcp-servers-for-cloudflare/` | 2025-10-27 |  |
+| dns-analytics.mcp.cloudflare.com | Cloudflare MCP | DNS Analytics MCP server for performance optimization and debugging | `https://developers.cloudflare.com/agents/model-context-protocol/mcp-servers-for-cloudflare/` | 2025-10-27 |  |
 | dns.google | Utility | DNS-over-HTTPS lookups for diagnostics | `https://dns.google/resolve?name=dns.google&type=A` | 2025-10-17 |  |
 | docs.anthropic.com | Anthropic | Claude/Anthropic documentation | `https://dns.google/resolve?name=docs.anthropic.com&type=A` | 2025-10-17 |  |
 | docs.aws.amazon.com | AWS | AWS documentation CDN | `https://dns.google/resolve?name=docs.aws.amazon.com&type=A` | 2025-10-17 |  |
@@ -73,6 +83,7 @@ baseline behaviour.
 | docs.docker.com | Container tooling | Docker product documentation and CLI reference | `https://dns.google/resolve?name=docs.docker.com&type=A` | 2025-10-17 |  |
 | docs.github.com | GitHub | GitHub documentation | `https://dns.google/resolve?name=docs.github.com&type=A` | 2025-10-17 |  |
 | docs.hetzner.com | Hetzner | Hetzner documentation hub | `https://dns.google/resolve?name=docs.hetzner.com&type=A` | 2025-10-17 |  |
+| docs.mcp.cloudflare.com | Cloudflare MCP | Documentation MCP server for Cloudflare reference material | `https://developers.cloudflare.com/agents/model-context-protocol/mcp-servers-for-cloudflare/` | 2025-10-27 |  |
 | docs.runcloud.io | RunCloud | RunCloud documentation | `https://dns.google/resolve?name=docs.runcloud.io&type=A` | 2025-10-17 |  |
 | duckduckgo.com | Search | Web search endpoint used by MCP tooling | `https://dns.google/resolve?name=duckduckgo.com&type=A` | 2025-10-17 |  |
 | eslint.org | Tooling docs | Official ESLint documentation for rule reference and CLI usage | `https://dns.google/resolve?name=eslint.org&type=A` | 2025-10-17 |  |
@@ -80,16 +91,20 @@ baseline behaviour.
 | git.io | GitHub | Short URLs referenced in docs | `https://dns.google/resolve?name=git.io&type=A` | 2025-10-17 |  |
 | github.githubassets.com | GitHub | Static asset CDN (docs UI) | `https://dns.google/resolve?name=github.githubassets.com&type=A` | 2025-10-17 |  |
 | graphql.org | GraphQL | Official GraphQL specification and reference | `https://dns.google/resolve?name=graphql.org&type=A` | 2025-10-17 |  |
+| graphql.mcp.cloudflare.com | Cloudflare MCP | GraphQL MCP server for Cloudflare analytics queries | `https://developers.cloudflare.com/agents/model-context-protocol/mcp-servers-for-cloudflare/` | 2025-10-27 |  |
 | help.openai.com | OpenAI | Help center | `https://dns.google/resolve?name=help.openai.com&type=A` | 2025-10-17 |  |
 | hetzner.com | Hetzner | Provider portal | `https://dns.google/resolve?name=hetzner.com&type=A` | 2025-10-17 |  |
 | html.duckduckgo.com | Search | HTML search endpoint (used by MCP) | `https://dns.google/resolve?name=html.duckduckgo.com&type=A` | 2025-10-17 | CNAME to duckduckgo.com |
 | inlang.com | Localization | Inlang/Paraglide SDK documentation hub | `https://dns.google/resolve?name=inlang.com&type=A` | 2025-10-17 |  |
+| logs.mcp.cloudflare.com | Cloudflare MCP | Logpush MCP server providing health summaries for Logpush jobs | `https://developers.cloudflare.com/agents/model-context-protocol/mcp-servers-for-cloudflare/` | 2025-10-27 |  |
 | lucide.dev | Icons | Lucide icon documentation for `@lucide/svelte` usage | `https://dns.google/resolve?name=lucide.dev&type=A` | 2025-10-17 |  |
 | manage.runcloud.io | RunCloud | RunCloud control panel | `https://dns.google/resolve?name=manage.runcloud.io&type=A` | 2025-10-17 |  |
+| mcp-cloudflare.ocillo.com | Internal MCP | Ocillo-managed Cloudflare MCP portal for agency workflows | `https://dns.google/resolve?name=mcp-cloudflare.ocillo.com&type=A` | 2025-10-27 | Internal OAuth entry point shared across projects |
 | mcp.context7.com | MCP Server | Context7 MCP endpoint for AI tooling | `https://dns.google/resolve?name=mcp.context7.com&type=A` | 2025-10-17 |  |
 | media.githubusercontent.com | GitHub | Media attachments CDN | `https://dns.google/resolve?name=media.githubusercontent.com&type=A` | 2025-10-17 |  |
 | nodejs.org | Runtime | Node.js release artifacts and documentation | `https://dns.google/resolve?name=nodejs.org&type=A` | 2025-10-17 |  |
 | objects.githubusercontent.com | GitHub | Release assets CDN | `https://dns.google/resolve?name=objects.githubusercontent.com&type=A` | 2025-10-17 |  |
+| observability.mcp.cloudflare.com | Cloudflare MCP | Observability MCP server for Workers logs and analytics | `https://developers.cloudflare.com/agents/model-context-protocol/mcp-servers-for-cloudflare/` | 2025-10-27 |  |
 | one.dash.cloudflare.com | Cloudflare | Zero Trust dashboard | `https://dns.google/resolve?name=one.dash.cloudflare.com&type=A` | 2025-10-17 |  |
 | openai.com | OpenAI | Root site (redirects, marketing) | `https://dns.google/resolve?name=openai.com&type=A` | 2025-10-17 |  |
 | opennext.js.org | Tooling docs | OpenNext.js documentation for Next.js deployment patterns | `https://dns.google/resolve?name=opennext.js.org&type=A` | 2025-10-24 | Cloudflare CDN (3 IPs: 172.67.73.64, 104.26.8.84, 104.26.9.84) |
@@ -104,6 +119,7 @@ baseline behaviour.
 | prettier.io | Tooling docs | Prettier formatter documentation | `https://dns.google/resolve?name=prettier.io&type=A` | 2025-10-17 |  |
 | r.jina.ai | Utility | Plain-text fetch proxy used by Codex CLI | `https://dns.google/resolve?name=r.jina.ai&type=A` | 2025-10-17 | SOC 2 compliant; note privacy impact |
 | radar.cloudflare.com | Cloudflare | Radar analytics | `https://dns.google/resolve?name=radar.cloudflare.com&type=A` | 2025-10-17 |  |
+| radar.mcp.cloudflare.com | Cloudflare MCP | Radar MCP server for global Internet traffic insights | `https://developers.cloudflare.com/agents/model-context-protocol/mcp-servers-for-cloudflare/` | 2025-10-27 |  |
 | raw.githubusercontent.com | GitHub | Raw file CDN | `https://dns.google/resolve?name=raw.githubusercontent.com&type=A` | 2025-10-17 |  |
 | robot.your-server.de | Hetzner | Robot legacy management interface | `https://dns.google/resolve?name=robot.your-server.de&type=A` | 2025-10-17 |  |
 | runcloud.io | RunCloud | Marketing/docs root domain | `https://dns.google/resolve?name=runcloud.io&type=A` | 2025-10-17 |  |

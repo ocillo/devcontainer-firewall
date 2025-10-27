@@ -4,6 +4,7 @@
 # https://developers.openai.com/codex/cloud/internet-access/
 
 accounts.hetzner.com
+ai-gateway.mcp.cloudflare.com
 alpinelinux.org
 anaconda.com
 apache.org
@@ -16,12 +17,18 @@ app.vercel.com
 apt.llvm.org
 archlinux.org
 astral.sh
+auditlogs.mcp.cloudflare.com
 auth.openai.com
+autorag.mcp.cloudflare.com
 avatars.githubusercontent.com
 azure.com
+bindings.mcp.cloudflare.com
 bitbucket.org
 blog.cloudflare.com
 bower.io
+browser.mcp.cloudflare.com
+builds.mcp.cloudflare.com
+casb.mcp.cloudflare.com
 centos.org
 chat.openai.com
 chatgpt.com
@@ -36,6 +43,7 @@ console.anthropic.com
 console.aws.amazon.com
 console.hetzner.cloud
 containers.dev
+containers.mcp.cloudflare.com
 context7.com
 continuum.io
 cpan.org
@@ -44,6 +52,8 @@ dash.cloudflare.com
 debian.org
 developers.cloudflare.com
 developers.openai.com
+dex.mcp.cloudflare.com
+dns-analytics.mcp.cloudflare.com
 dns.google
 docker.com
 docker.io
@@ -54,6 +64,7 @@ docs.claude.com
 docs.docker.com
 docs.github.com
 docs.hetzner.com
+docs.mcp.cloudflare.com
 docs.runcloud.io
 dot.net
 dotnet.microsoft.com
@@ -73,6 +84,7 @@ golang.org
 google.com
 goproxy.io
 gradle.org
+graphql.mcp.cloudflare.com
 graphql.org
 hashicorp.com
 haskell.org
@@ -88,10 +100,12 @@ json-schema.org
 json.schemastore.org
 k8s.io
 launchpad.net
+logs.mcp.cloudflare.com
 lucide.dev
 manage.runcloud.io
 marketplace.visualstudio.com
 maven.org
+mcp-cloudflare.ocillo.com
 mcp.context7.com
 mcr.microsoft.com
 media.githubusercontent.com
@@ -102,6 +116,7 @@ npmjs.com
 npmjs.org
 nuget.org
 objects.githubusercontent.com
+observability.mcp.cloudflare.com
 one.dash.cloudflare.com
 openai.com
 opennext.js.org
@@ -128,6 +143,7 @@ pythonhosted.org
 quay.io
 r.jina.ai
 radar.cloudflare.com
+radar.mcp.cloudflare.com
 raw.githubusercontent.com
 registry.npmjs.org
 robot.your-server.de

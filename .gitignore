@@ -37,3 +37,7 @@ ehthumbs_vista.db
 
 /docs/standards/
 .devcontainer.example
+
+# Claude
+
+.claude/settings.local.json
