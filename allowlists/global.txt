@@ -13,6 +13,7 @@ api.cloudflare.com
 api.github.com
 api.openai.com
 api.vercel.com
+app.infisical.com
 app.vercel.com
 apt.llvm.org
 archlinux.org
@@ -71,6 +72,7 @@ dotnet.microsoft.com
 duckduckgo.com
 eclipse.org
 eslint.org
+eu.infisical.com
 fedoraproject.org
 files.pythonhosted.org
 gcr.io
@@ -92,6 +94,7 @@ help.openai.com
 hetzner.com
 hex.pm
 html.duckduckgo.com
+infisical.com
 inlang.com
 java.com
 java.net

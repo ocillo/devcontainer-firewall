@@ -94,6 +94,9 @@ baseline behaviour.
 | graphql.mcp.cloudflare.com | Cloudflare MCP | GraphQL MCP server for Cloudflare analytics queries | `https://developers.cloudflare.com/agents/model-context-protocol/mcp-servers-for-cloudflare/` | 2025-10-27 |  |
 | help.openai.com | OpenAI | Help center | `https://dns.google/resolve?name=help.openai.com&type=A` | 2025-10-17 |  |
 | hetzner.com | Hetzner | Provider portal | `https://dns.google/resolve?name=hetzner.com&type=A` | 2025-10-17 |  |
+| app.infisical.com | Secrets management | Infisical Cloud API endpoint (SDK default host) | `https://dns.google/resolve?name=app.infisical.com&type=A` | 2025-10-30 | Cloudflare CDN (2 IPs: 172.67.190.124, 104.21.10.146) |
+| eu.infisical.com | Secrets management | Infisical Cloud EU region endpoint | `https://dns.google/resolve?name=eu.infisical.com&type=A` | 2025-10-30 | Cloudflare CDN (2 IPs: 104.21.10.146, 172.67.190.124) |
+| infisical.com | Secrets management | Agency secrets management for Ocillo projects | `https://dns.google/resolve?name=infisical.com&type=A` | 2025-10-30 | Cloudflare CDN (2 IPs: 104.21.10.146, 172.67.190.124) |
 | html.duckduckgo.com | Search | HTML search endpoint (used by MCP) | `https://dns.google/resolve?name=html.duckduckgo.com&type=A` | 2025-10-17 | CNAME to duckduckgo.com |
 | inlang.com | Localization | Inlang/Paraglide SDK documentation hub | `https://dns.google/resolve?name=inlang.com&type=A` | 2025-10-17 |  |
 | logs.mcp.cloudflare.com | Cloudflare MCP | Logpush MCP server providing health summaries for Logpush jobs | `https://developers.cloudflare.com/agents/model-context-protocol/mcp-servers-for-cloudflare/` | 2025-10-27 |  |

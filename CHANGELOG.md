@@ -6,6 +6,8 @@ We cut date-based releases: move entries from `Unreleased` into a `## [vYYYY.MM.
 section and tag the commit `vYYYY.MM.DD`. Leave `Unreleased` empty between releases.
 
 ## [Unreleased]
+### Added
+- Add `infisical.com`, `app.infisical.com`, and `eu.infisical.com` to shared allowlist for agency secrets management with Infisical Cloud (SDK requires app.infisical.com; EU region uses eu.infisical.com).
 
 ## [v2025.10.27] – 2025-10-27
 ### Added
