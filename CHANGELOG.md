@@ -5,54 +5,68 @@ The format loosely follows [Keep a Changelog](https://keepachangelog.com/en/1.1.
 We cut date-based releases: move entries from `Unreleased` into a `## [vYYYY.MM.DD] – YYYY-MM-DD`
 section and tag the commit `vYYYY.MM.DD`. Leave `Unreleased` empty between releases.
 
+### Entry guidelines
+- Keep each bullet to a single-line summary; link to `docs/allowlist-registry.md` or other docs when more detail is required.
+
+**Good**
+- Add Bitwarden Secrets Manager domains to shared allowlist (see docs/allowlist-registry.md).
+
+**Bad**
+- Add `identity.bitwarden.com`, `api.bitwarden.com`, and `bitwarden.com` to shared allowlist so Bitwarden Secrets Manager auth, API calls, and documentation access succeed in devcontainers.
+
 ## [Unreleased]
 ### Added
-- Add `infisical.com`, `app.infisical.com`, and `eu.infisical.com` to shared allowlist for agency secrets management with Infisical Cloud (SDK requires app.infisical.com; EU region uses eu.infisical.com).
+- _None_
+
+## [v2025.11.04] – 2025-11-04
+### Added
+- Add Infisical Cloud domains to shared allowlist (see docs/allowlist-registry.md).
+- Add Bitwarden Secrets Manager domains to shared allowlist (see docs/allowlist-registry.md).
 
 ## [v2025.10.27] – 2025-10-27
 ### Added
-- Add `opennext.js.org` to shared allowlist for OpenNext.js deployment documentation.
-- Add `payloadcms.com` to shared allowlist for Payload CMS documentation and configuration reference.
-- Add Cloudflare-managed MCP endpoints (`docs`, `bindings`, `builds`, `observability`, `radar`, `containers`, `browser`, `logs`, `ai-gateway`, `autorag`, `auditlogs`, `dns-analytics`, `dex`, `casb`, `graphql`) plus `mcp-cloudflare.ocillo.com` to the shared allowlist and registry so devcontainers can use Cloudflare's MCP catalog and our agency portal.
+- Add OpenNext.js documentation host to shared allowlist (see docs/allowlist-registry.md).
+- Add Payload CMS documentation host to shared allowlist (see docs/allowlist-registry.md).
+- Add Cloudflare-managed MCP endpoints and agency portal to shared allowlist (see docs/allowlist-registry.md).
 
 ## [v2025.10.23] – 2025-10-23
 ### Added
-- Provide a `scripts/templates/firewall-refresh.sh` copy so downstream repos can vendor the helper directly.
-- Add `uv` (Python package manager) to this repo's devcontainer for Python-based MCP servers and tooling.
-- Add `astral.sh`, `docs.astral.sh`, and `files.pythonhosted.org` to shared allowlist for uv installation and Python package downloads.
+- Publish firewall-refresh helper template for downstream repos.
+- Enable uv in devcontainer for Python-based MCP tooling.
+- Add uv tooling domains to shared allowlist (see docs/allowlist-registry.md).
 
 ### Changed
-- Update `docs/usage.md` to link to raw template URLs and clarify that `FIREWALL_ALLOWLIST_URL` must be fully expanded (Dev Containers do not substitute `${FIREWALL_ALLOWLIST_REF}` automatically).
+- Clarify `docs/usage.md` template URLs and `FIREWALL_ALLOWLIST_URL` requirements.
 
 ## [v2025.10.22] – 2025-10-22
 ### Added
-- Provide `scripts/templates/` copies of `setup-firewall.sh` and `init-firewall.sh` plus a project `.devcontainer/` for validating shared firewall changes locally.
-- Add `auth.openai.com` to the shared `allowlists/global.txt` and record it in `docs/allowlist-registry.md` (required for OpenAI authentication flows).
-- Add `chatgpt.com` to the shared allowlist and document it in the registry (new ChatGPT routing domain).
+- Publish setup/init firewall templates and validation devcontainer.
+- Add auth.openai.com to shared allowlist (see docs/allowlist-registry.md).
+- Add chatgpt.com to shared allowlist (see docs/allowlist-registry.md).
 
 ### Changed
-- Update README and usage guide to point consumers at the new templates.
+- Update README and usage guide to reference the new templates.
 - Point helper script hints to the canonical GitHub documentation.
-- `.devcontainer/init-firewall.sh` now fetches the shared allowlist fresh on every run, logs the exact sources used, and falls back loudly to the bundled baseline (IPv4-only) when the download fails.
-- `scripts/firewall-refresh.sh` delegates downloads to the init script so refreshes surface failures immediately.
+- Have `.devcontainer/init-firewall.sh` fetch the shared allowlist on every run with explicit logging and fallback.
+- Make `scripts/firewall-refresh.sh` delegate downloads to the init script so failures surface immediately.
 
 ### Removed
-- Drop the legacy `.devcontainer.example/` snapshot in favour of the shared templates.
-- The `FIREWALL_ALLOWLIST_CACHE_DIR` environment variable and all cache-based fallback logic.
+- Remove the legacy `.devcontainer.example/` snapshot in favour of the shared templates.
+- Remove `FIREWALL_ALLOWLIST_CACHE_DIR` and cache-based fallback logic.
 
 ## [v2025.10.17] – 2025-10-17
 ### Added
 - Document shared vs. per-project responsibilities in README.
 - Add documentation hints to helper scripts and init-firewall logging.
 - Introduce `CHANGELOG.md` to track future updates.
-- Establish `docs/allowlist-registry.md` as the single location for pending/approved/removed allowlist entries (includes Svelte/Shadcn/Tailwind rationale).
-- Promote the shared tooling/docs hostnames into `allowlists/global.txt` and `docs/allowlist-registry.md` (Ocillo team feat. Codex & Claude).
+- Establish `docs/allowlist-registry.md` as the canonical approvals log (Svelte/Shadcn/Tailwind rationale included).
+- Promote shared tooling and documentation hostnames into `allowlists/global.txt` and the registry.
 
 ### Changed
 - Clarify `docs/usage.md` entry point for quick navigation.
-- Enhance helper script `--help` output with links to docs.
-- Note IP-based matching requirement in README devcontainer workflow section.
-- Simplify README allowlist workflow to reference the registry doc and remove `allowlists/domain-suggestions.txt` in favour of the registry tables.
+- Enhance helper script `--help` output with doc links.
+- Note IP-based matching requirement in the README devcontainer workflow section.
+- Replace `allowlists/domain-suggestions.txt` with the registry tables.
 
 ## [Initial]
 - Baseline `allowlists/global.txt`, helper scripts, and usage guide prototyped prior to publishing this changelog.

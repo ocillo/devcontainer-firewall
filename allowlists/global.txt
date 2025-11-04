@@ -9,6 +9,7 @@ alpinelinux.org
 anaconda.com
 apache.org
 api.anthropic.com
+api.bitwarden.com
 api.cloudflare.com
 api.github.com
 api.openai.com
@@ -25,6 +26,7 @@ avatars.githubusercontent.com
 azure.com
 bindings.mcp.cloudflare.com
 bitbucket.org
+bitwarden.com
 blog.cloudflare.com
 bower.io
 browser.mcp.cloudflare.com
@@ -94,6 +96,7 @@ help.openai.com
 hetzner.com
 hex.pm
 html.duckduckgo.com
+identity.bitwarden.com
 infisical.com
 inlang.com
 java.com

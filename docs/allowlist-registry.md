@@ -43,6 +43,7 @@ baseline behaviour.
 | --- | --- | --- | --- | --- | --- |
 | accounts.hetzner.com | Hosting provider | Hetzner account portal for billing/access management | `https://dns.google/resolve?name=accounts.hetzner.com&type=A` | 2025-10-17 | Shares IP with Robot legacy console |
 | ai-gateway.mcp.cloudflare.com | Cloudflare MCP | Managed AI Gateway MCP server for prompt analytics and log searches | `https://developers.cloudflare.com/agents/model-context-protocol/mcp-servers-for-cloudflare/` | 2025-10-27 |  |
+| api.bitwarden.com | Secrets management | Bitwarden Secrets Manager API endpoints for syncing and deploying secrets | `https://dns.google/resolve?name=api.bitwarden.com&type=A` | 2025-11-04 | Fastly-backed Bitwarden cloud |
 | api.cloudflare.com | Cloudflare | REST API for firewall/Workers automation | `https://dns.google/resolve?name=api.cloudflare.com&type=A` | 2025-10-17 |  |
 | api.github.com | GitHub | REST/GraphQL API for automation | `https://dns.google/resolve?name=api.github.com&type=A` | 2025-10-17 |  |
 | api.openai.com | OpenAI | REST API for models/embeddings | `https://dns.google/resolve?name=api.openai.com&type=A` | 2025-10-17 |  |
@@ -53,6 +54,7 @@ baseline behaviour.
 | autorag.mcp.cloudflare.com | Cloudflare MCP | AI Search MCP server for listing and searching indexed documents | `https://developers.cloudflare.com/agents/model-context-protocol/mcp-servers-for-cloudflare/` | 2025-10-27 |  |
 | avatars.githubusercontent.com | GitHub | User avatar CDN (docs, changelog visuals) | `https://dns.google/resolve?name=avatars.githubusercontent.com&type=A` | 2025-10-17 |  |
 | bindings.mcp.cloudflare.com | Cloudflare MCP | Workers Bindings MCP server for storage, AI, and compute integrations | `https://developers.cloudflare.com/agents/model-context-protocol/mcp-servers-for-cloudflare/` | 2025-10-27 |  |
+| bitwarden.com | Secrets management | Bitwarden account + documentation portal (includes Secrets Manager help articles) | `https://dns.google/resolve?name=bitwarden.com&type=A` | 2025-11-04 | Fastly CDN shared across app, docs, and marketing |
 | blog.cloudflare.com | Cloudflare | Engineering/security announcements | `https://dns.google/resolve?name=blog.cloudflare.com&type=A` | 2025-10-17 |  |
 | browser.mcp.cloudflare.com | Cloudflare MCP | Browser Rendering MCP server for fetching pages and screenshots | `https://developers.cloudflare.com/agents/model-context-protocol/mcp-servers-for-cloudflare/` | 2025-10-27 |  |
 | builds.mcp.cloudflare.com | Cloudflare MCP | Workers Builds MCP server for deployment insights and management | `https://developers.cloudflare.com/agents/model-context-protocol/mcp-servers-for-cloudflare/` | 2025-10-27 |  |
@@ -98,6 +100,7 @@ baseline behaviour.
 | eu.infisical.com | Secrets management | Infisical Cloud EU region endpoint | `https://dns.google/resolve?name=eu.infisical.com&type=A` | 2025-10-30 | Cloudflare CDN (2 IPs: 104.21.10.146, 172.67.190.124) |
 | infisical.com | Secrets management | Agency secrets management for Ocillo projects | `https://dns.google/resolve?name=infisical.com&type=A` | 2025-10-30 | Cloudflare CDN (2 IPs: 104.21.10.146, 172.67.190.124) |
 | html.duckduckgo.com | Search | HTML search endpoint (used by MCP) | `https://dns.google/resolve?name=html.duckduckgo.com&type=A` | 2025-10-17 | CNAME to duckduckgo.com |
+| identity.bitwarden.com | Secrets management | Bitwarden identity service for issuing Secrets Manager access tokens | `https://dns.google/resolve?name=identity.bitwarden.com&type=A` | 2025-11-04 | Fastly-backed Bitwarden cloud |
 | inlang.com | Localization | Inlang/Paraglide SDK documentation hub | `https://dns.google/resolve?name=inlang.com&type=A` | 2025-10-17 |  |
 | logs.mcp.cloudflare.com | Cloudflare MCP | Logpush MCP server providing health summaries for Logpush jobs | `https://developers.cloudflare.com/agents/model-context-protocol/mcp-servers-for-cloudflare/` | 2025-10-27 |  |
 | lucide.dev | Icons | Lucide icon documentation for `@lucide/svelte` usage | `https://dns.google/resolve?name=lucide.dev&type=A` | 2025-10-17 |  |
