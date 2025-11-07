@@ -4,6 +4,8 @@
 >
 > We've moved on 2025-11-07 to a **self-contained approach** where each project manages its firewall configuration inline, following [Anthropic's reference implementation](https://github.com/anthropics/claude-code/tree/main/.devcontainer).
 >
+> **Why inline?** The centralized approach added unnecessary complexity. Explicit, per-project configuration is simpler and more maintainable. The firewall rules live where the dev environment runs.
+>
 > **DO NOT copy from this repository:**
 > - Templates (`scripts/templates/`)
 > - devcontainer.json configurations
@@ -12,6 +14,22 @@
 > - Firewall initialization scripts
 >
 > **Instead:** ask executives for template repo or most up to date client repo for current best practices.
+>
+> **Lessons learned:** KISS.
+>
+> The centralized approach created too much mental overhead:
+> - Which list applies and in what order?
+> - Is example.com allowed by firewall or not? Do I check global allowlist or local allowlist?
+> - What to modify shared or local?
+> - How to modify shared list?
+> - Too many layers of configuration
+> - Multiple script files and unnecessary complexity
+>
+> Inline is better:
+> - Config lives where the dev environment is run
+> - One file, one place, no ambiguity
+> - Need to allow a domain? Edit it right there
+> - No syncing, no downloading, no confusion
 >
 > This repository is preserved for historical reference.
 
