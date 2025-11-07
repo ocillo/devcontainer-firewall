@@ -1,5 +1,22 @@
 # Ocillo Devcontainer Firewall
 
+> **⚠️ ARCHIVED - This repository is no longer actively maintained.**
+>
+> We've moved on 2025-11-07 to a **self-contained approach** where each project manages its firewall configuration inline, following [Anthropic's reference implementation](https://github.com/anthropics/claude-code/tree/main/.devcontainer).
+>
+> **DO NOT copy from this repository:**
+> - Templates (`scripts/templates/`)
+> - devcontainer.json configurations
+> - Dockerfile patterns
+> - Shared allowlist download logic
+> - Firewall initialization scripts
+>
+> **Instead:** ask executives for template repo or most up to date client repo for current best practices.
+>
+> This repository is preserved for historical reference.
+
+---
+
 Note: This repo is public so client projects can consume `allowlists/global.txt`.
 
 Shared outbound allowlist + helper scripts so every project starts from the same secure defaults. This repository is the **single source of truth** for:
